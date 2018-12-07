@@ -1,0 +1,8 @@
+Event	CompSymbol	Number	PricePerShare	TotalValue	Date&Time
+
+Buy	GOOG		2	569.964		1139.93		Wed Dec  5 10:55:54 2018
+
+Buy	AMZN		10	129.66		1296.6		Wed Dec  5 10:56:29 2018
+
+Sell	AMZN		5	129.66		1296.6		Thu Dec  6 11:34:52 2018
+

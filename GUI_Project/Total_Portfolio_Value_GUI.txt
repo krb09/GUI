@@ -1,0 +1,10 @@
+TotalPortfolioValue($)	Date&Time
+
+                 10000	Wed Dec  5 10:55:21 2018
+
+                 10000	Wed Dec  5 10:55:57 2018
+
+                 10000	Wed Dec  5 10:56:30 2018
+
+                 10120	Thu Dec  6 11:34:55 2018
+

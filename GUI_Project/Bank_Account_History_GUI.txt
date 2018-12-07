@@ -1,0 +1,8 @@
+Event		Amount		Balance		Date&Time
+
+BUYShare	1139.93		8860.07		Wed Dec  5 10:55:57 2018
+
+BUYShare	1296.6		7563.47		Wed Dec  5 10:56:30 2018
+
+SELLShare	698.3		8261.77		Thu Dec  6 11:34:55 2018
+

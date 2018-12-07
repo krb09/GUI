@@ -1,0 +1,5 @@
+TotalPortfolioValue($)	Time(in Seconds)
+                 10000	218441
+                 10000	218477
+                 10000	218510
+                 10120	307215
