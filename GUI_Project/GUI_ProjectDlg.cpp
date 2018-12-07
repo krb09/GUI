@@ -8,6 +8,8 @@
 #include "afxdialogex.h"
 #include "Account_GUI.h"
 #include "Bank_Account_GUI.h"
+#include "Stock_portfolio_ListNode_Kartik_GUI.h"
+#include "Stock_portfolio_List_GUI.h"
 #include <fstream>
 #include <vector>
 #include <string>
@@ -60,6 +62,9 @@ CGUIProjectDlg::CGUIProjectDlg(CWnd* pParent /*=nullptr*/)
 	, m_amount(_T("Enter"))
 	, m_result(_T("Result"))
 	, amount_update(_T(""))
+	, m_sym(_T("Enter Symbol"))
+	, m_num(_T(""))
+	, m_sp(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -70,6 +75,9 @@ void CGUIProjectDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_EDIT_Instructions, m_instructions);
 	DDX_Text(pDX, IDC_EDIT_Amount, m_amount);
 	DDX_Text(pDX, IDC_EDIT_Result, m_result);
+	DDX_Text(pDX, IDC_EDIT1, m_sym);
+	DDX_Text(pDX, IDC_EDIT_num, m_num);
+	DDX_Text(pDX, IDC_EDIT_SP, m_sp);
 }
 
 BEGIN_MESSAGE_MAP(CGUIProjectDlg, CDialogEx)
@@ -85,6 +93,7 @@ BEGIN_MESSAGE_MAP(CGUIProjectDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_2, &CGUIProjectDlg::OnBnClickedButton2)
 	ON_BN_CLICKED(IDC_BUTTON_3, &CGUIProjectDlg::OnBnClickedButton3)
 	ON_BN_CLICKED(IDC_BUTTON_4, &CGUIProjectDlg::OnBnClickedButton4)
+	ON_BN_CLICKED(IDC_BUTTON_SP, &CGUIProjectDlg::OnBnClickedButtonSp)
 END_MESSAGE_MAP()
 
 
@@ -269,8 +278,25 @@ CString CGUIProjectDlg::return_amount()
 	return str;
 }
 
-
-
-
-
-
+//XX---------------------------------------STOCK ACCOUNT------------------------------------------------------------------------------------XX
+List SA;
+void CGUIProjectDlg::OnBnClickedButtonSp()
+{
+	UpdateData(true);
+	m_sym = m_sym;
+	CStringA m_sym1(m_sym);
+	string send(m_sym1);
+	double return_value = SA.return_stockprice(send);
+	if (return_value == 0)
+	{
+		m_result = "Symbol not found";
+	}
+	else
+	{
+		CString convert;
+		convert.Format(_T("%g"), return_value);
+		CString str = _T("The current share price for" + m_sym + " is:$");
+		m_result = str + convert;
+	}
+	UpdateData(false);
+}

@@ -62,7 +62,7 @@ CString Bank_Account_GUI::print_out_history()
 	while (getline(read_bank, item))
 	{
 		//cout << item << endl;
-		final_string = final_string + item;
+		final_string = final_string +item + "\r\n";
 	}
 	str = final_string.c_str();
 	return str;

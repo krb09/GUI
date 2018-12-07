@@ -3,7 +3,7 @@
 //
 
 #pragma once
-
+#define _CRT_SECURE_NO_WARNINGS
 
 // CGUIProjectDlg dialog
 class CGUIProjectDlg : public CDialogEx
@@ -54,4 +54,9 @@ public:
 	afx_msg void OnBnClickedButton2();
 	afx_msg void OnBnClickedButton3();
 	afx_msg void OnBnClickedButton4();
+	CString m_sym;
+	afx_msg void OnBnClickedButtonSp();
+private:
+	CString m_num;
+	CString m_sp;
 };
